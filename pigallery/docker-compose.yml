@@ -12,7 +12,7 @@ services:
       - "/media/pi/1.42.6-25426/bilder/bilder_jpg/sortiert:/app/data/images" # CHANGE ME
       - "./pigallery2/tmp:/app/data/tmp" # CHANGE ME
     ports:
-      - 80:80
+      - 81:80
     restart: always
 
 volumes:
