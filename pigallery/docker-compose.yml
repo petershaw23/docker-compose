@@ -1,0 +1,19 @@
+# nginx-less version!
+version: '3'
+services:
+  pigallery2:
+    image: bpatrik/pigallery2:latest-debian-buster
+    container_name: pigallery2
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - "./pigallery2/config:/app/data/config" # CHANGE ME
+      - "./db-data:/app/data/db"
+      - "/media/pi/1.42.6-25426/bilder/bilder_jpg/sortiert:/app/data/images" # CHANGE ME
+      - "./pigallery2/tmp:/app/data/tmp" # CHANGE ME
+    ports:
+      - 80:80
+    restart: always
+
+volumes:
+  db-data:
